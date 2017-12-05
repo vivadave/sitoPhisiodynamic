@@ -175,6 +175,22 @@ function onepress_widgets_init() {
 }
 add_action( 'widgets_init', 'onepress_widgets_init' );
 
+function get_latest_post_link(){
+    global $post;
+    $placeholder = $post;
+    $args = array(
+        'numberposts'     => 1,
+        'offset'          => 0,
+        'orderby'         => 'post_date',
+        'order'           => 'DESC',
+        'post_status'     => 'publish' );
+    $sorted_posts = get_posts( $args );
+    $permalink = get_permalink($sorted_posts[0]->ID);
+    $title = $sorted_posts[0]->post_title;
+    $post = $placeholder;
+    $latest_link_html = 'Latest Link: <a href="'.$permalink.'">'.$title.'</a>';
+	return $permalink;
+}
 /**
  * Enqueue scripts and styles.
  */

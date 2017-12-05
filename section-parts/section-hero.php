@@ -80,6 +80,8 @@ if ( $is_parallax ) {
 				$hcl1_smalltext  = get_theme_mod( 'onepress_hcl1_smalltext', wp_kses_post('Morbi tempus porta nunc <strong>pharetra quisque</strong> ligula imperdiet posuere<br> vitae felis proin sagittis leo ac tellus blandit sollicitudin quisque vitae placerat.', 'onepress') );
 				$hcl1_btn1_text  = get_theme_mod( 'onepress_hcl1_btn1_text', esc_html__('Our Services', 'onepress') );
 				$hcl1_btn1_link  = get_theme_mod( 'onepress_hcl1_btn1_link', esc_url( home_url( '/' )).esc_html__('#services', 'onepress') );
+				$hcl1_btn1_resp_text  = get_theme_mod( 'onepress_hcl1_btn1_resp_text', esc_html__('Our Services', 'onepress') );
+				$hcl1_btn1_resp_link  = get_theme_mod( 'onepress_hcl1_btn1_resp_link', esc_url( home_url( '/' )).esc_html__('#services', 'onepress') );
 				$hcl1_btn2_text  = get_theme_mod( 'onepress_hcl1_btn2_text', esc_html__('Get Started', 'onepress') );
 				$hcl1_btn2_link  = get_theme_mod( 'onepress_hcl1_btn2_link', esc_url( home_url( '/' )).esc_html__('#contact', 'onepress') );
 
@@ -90,8 +92,13 @@ if ( $is_parallax ) {
 					<div class="hero__content hero-content-style<?php echo esc_attr( $layout ); ?>">
 						<?php if ($hcl1_largetext != '') echo '<h2 class="hero-large-text">' . wp_kses_post($hcl1_largetext) . '</h2>'; ?>
 						<?php if ($hcl1_smalltext != '') echo '<p class="hero-small-text"> ' . do_shortcode( wp_kses_post( $hcl1_smalltext ) ) . '</p>' ?>
-						<?php if ($hcl1_btn1_text != '' && $hcl1_btn1_link != '') echo '<a href="' . esc_url($hcl1_btn1_link) . '" class="btn '.esc_attr( $btn_1_style ).' btn-lg">' . wp_kses_post($hcl1_btn1_text) . '</a>'; ?>
-						<?php if ($hcl1_btn2_text != '' && $hcl1_btn2_link != '') echo '<a href="' . esc_url($hcl1_btn2_link) . '" class="btn '.esc_attr( $btn_2_style ).' btn-lg">' . wp_kses_post($hcl1_btn2_text) . '</a>'; ?>
+						<?php if ($hcl1_btn1_text != '' && $hcl1_btn1_link != '') echo '<a href="' . esc_url($hcl1_btn1_link) . '" class="btn '.esc_attr( $btn_1_style ).' btn-lg widescreen-mode">' . wp_kses_post($hcl1_btn1_text) . '</a>'; ?>
+						<?php if ($hcl1_btn1_resp_text != '' && $hcl1_btn1_resp_link != '') echo '<a href="' . esc_url($hcl1_btn1_resp_link) . '" class="btn '.esc_attr( $btn_1_style ).' btn-lg responsive-mode">' . wp_kses_post($hcl1_btn1_resp_text) . '</a>'; ?>
+						<?php if ($hcl1_btn2_text != '' && $hcl1_btn2_link != '') { 
+								echo '<a href="' . esc_url($hcl1_btn2_link) . '" class="btn '.esc_attr( $btn_2_style ).' btn-lg">' . wp_kses_post($hcl1_btn2_text) . '</a>'; 
+						 	} else if ($hcl1_btn2_text != '' && $hcl1_btn2_link == '') { 
+								echo '<a href="' . get_latest_post_link() . '" class="btn '.esc_attr( $btn_2_style ).' btn-lg">' . wp_kses_post($hcl1_btn2_text) . '</a>';
+							} ?>
 					</div>
 				</div>
 				<?php

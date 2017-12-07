@@ -3607,7 +3607,8 @@ function onepress_customize_register( $wp_customize ) {
 
     // Register custom section types.
    // $wp_customize->register_section_type( 'OnePress_Section_Plus' );
-    // Register sections.
+	// Register sections.
+	/*
     $wp_customize->add_section(
         'onepress_order_styling_preview',
         array(
@@ -3629,7 +3630,7 @@ function onepress_customize_register( $wp_customize ) {
                 'section'     => 'onepress_order_styling_preview',
                 'description' => __('<h4 class="customizer-group-heading-message">Drag &amp; Drop Section Orders</h4><p class="customizer-group-heading-message">Check out the <a target="_blank" href="https://www.famethemes.com/plugins/onepress-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=onepress_customizer#get-started">OnePress Plus</a> version for full control over the frontpage SECTIONS ORDER!</p><h4 class="customizer-group-heading-message">Advanced Section Styling</h4><p class="customizer-group-heading-message">Check out the <a target="_blank" href="https://www.famethemes.com/plugins/onepress-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=onepress_customizer#get-started">OnePress Plus</a> version for full control over the section styling which includes background color, image, video, parallax effect, custom style and more ...</p>', 'onepress' )
             )
-        ));
+        ));*/
 /*
     $wp_customize->add_section(
         new OnePress_Section_Plus(

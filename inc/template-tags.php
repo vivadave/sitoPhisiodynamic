@@ -1331,7 +1331,9 @@ if ( ! function_exists( 'onepress_footer_site_info' ) ) {
     function onepress_footer_site_info()
     {
         ?>
-        <?php printf(esc_html__('Copyright %1$s %2$s %3$s', 'onepress'), '&copy;', esc_attr(date('Y')), esc_attr(get_bloginfo())); ?>        
+        <?php printf(esc_html__('Copyright %1$s %2$s %3$s', 'onepress'), '&copy;', esc_attr(date('Y')), esc_attr(get_bloginfo())); ?></br>        
+        <span class="denomination">Via della Mendola 49/B - 39100 Bolzano</span></br>
+        <span class="piva">P.IVA 02682190216</span>
         <?php
     }
 }
@@ -1525,7 +1527,6 @@ if ( ! function_exists('onepress_load_hero') ) {
 }
 
 add_action( 'onepress_header_end', 'onepress_load_hero_section' );
-
 
 if ( ! function_exists('onepress_subscribe_form') ) {
     /**
